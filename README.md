@@ -1,1 +1,0 @@
-# it-cert-automation-practice
