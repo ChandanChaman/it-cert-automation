@@ -7,7 +7,6 @@ import smtplib
 
 def generate_email(sender, recipient, subject, body, attachment_path):
   """Creates an email with an attachement."""
-  # Basic Email formatting
   message = email.message.EmailMessage()
   message["From"] = sender
   message["To"] = recipient
@@ -30,12 +29,12 @@ def generate_email(sender, recipient, subject, body, attachment_path):
 
 def generate_error_report(sender,recipient,subject,body):
   """Creates an email with an attachement."""
-  # Basic Email formatting
   message = email.message.EmailMessage()
   message["From"] = sender
   message["To"] = recipient
   message["Subject"] = subject
   message.set_content(body)
+  return message
 
 def send_email(message):
   """Sends the message to the configured SMTP server."""
