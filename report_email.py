@@ -10,18 +10,6 @@ body= 'All fruits are uploaded to our website successfully. A detailed list is a
 attachment_path= '/tmp/processed.pdf'
 
 
-dir ='supplier-data/descriptions/'
-json_list=[]
-for f in os.listdir(dir):
-    dict = {}
-    if f.endswith('.txt'):
-        with open(dir+f) as fh:
-            line=fh.readlines()
-            dict['name'] = line[0].strip()
-            dict['weight'] = int(line[1].strip().strip('lbs').strip())
-    json_list.append(dict)
-
-
 pdf_data=''
 for data in json_list:
     pdf_data+='<br/>'

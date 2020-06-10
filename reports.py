@@ -15,3 +15,20 @@ def generate_report(filename, title, additional_info):
                 ('ALIGN', (0,0), (-1,-1), 'CENTER')]
   empty_line = Spacer(1,20)
   report.build([report_title, empty_line, report_info, empty_line])
+
+
+dir ='supplier-data/descriptions/'
+json_list=[]
+for f in os.listdir(dir):
+    dict = {}
+    if f.endswith('.txt'):
+        with open(dir+f,encoding='utf-8') as fh:
+            line=fh.readlines()
+            dict['name'] = line[0].strip()
+            dict['weight'] = int(line[1].strip().strip('lbs').strip())
+    json_list.append(dict)
+
+
+
+if __name__ == "__main__":
+    generate_report(attachment_path,'Processed Update on '+str(date.today()),pdf_data)
