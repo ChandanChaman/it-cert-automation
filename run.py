@@ -23,18 +23,3 @@ for f in os.listdir(dir):
     res=requests.post(url,data=dict)
     if res.status_code ==201:
         print ("Uploaded Data for : ", f)
-
-
-pdf_data=''
-for data in json_list:
-    pdf_data+='<br/>'
-    pdf_data+='name: '+data['name']
-    pdf_data+='<br/>'
-    pdf_data+='weight: '+str(data['weight'])
-    pdf_data+='<br/>'
-
-print (pdf_data)
-
-if __name__ == "__main__":
-    reports.generate_report('processed.pdf','Processed Update on '+str(date.today()),pdf_data)
-

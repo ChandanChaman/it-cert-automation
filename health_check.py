@@ -16,7 +16,7 @@ mem_free= 11
 cpu=30
 
 sender= 'automation@example.com'
-recipient='username@example.com'
+recipient='student-04-c3d3e472a0ef@example.com'
 body='Please check your system and resolve the issue as soon as possible.'
 
 #Check condition and send email
